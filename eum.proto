@@ -1,0 +1,275 @@
+package xapp.eum;
+option java_package = "com.finger.pb";
+option java_outer_classname = "PBEnum";
+
+
+enum MOVING_TYPE{
+MOVING_TO_LEFT=1;
+MOVING_TO_RIGHT=2;
+MOVING_NONE=3;
+}
+
+
+
+enum ENUM_Sound{
+E_Sbeida=1;//1 s
+E_Sbeidasi=2;//1 s
+E_Scaiji=3;//1 s
+E_Sdianneng=4;//1 s
+E_Sgongji=5;//1 s
+E_Spk=6;//1 s
+E_Suianjian=7;//1 s
+E_Swajue1=8;//1 s
+E_Swanchengrenwu=9;//1 s
+E_Syaosai4=10;//1 s
+E_Syaosaiui2=11;//1 s
+E_Szhuuianjian=12;//1 s
+E_Szoulu1=13;//1 s
+E_Szuoyou=14;//1 s
+E_Sguaiwusi=15;//1 s
+E_Sdubo=16;//1 s
+E_Stianfu=17;//1 s
+E_Sziyuanbugou=18;//1 s
+E_Sshengtaiyuanjiahao=19;//1 s
+E_Schengjiushengjitubiao=20;//1 s
+E_Szimu=21;//1 s
+
+}
+
+enum ENUM_UI_PAGE{
+E_UImain=1;//空间要塞
+E_UIvillage=2;//实验室
+E_UIpub=3;//星港营地
+E_UIbag=4;//
+E_UIbattle=5;//
+E_UIend=6;//
+E_UImap=7;//
+E_UIbase=8;//基地
+E_UIexchange=9;//交易所
+E_UIequipment=10;//装备库
+E_UIbarracks=11;//兵营
+E_UIset=12;//
+E_UIlanuage=13;//
+E_UIloading=14;//
+E_UIshop=15;//钻石
+E_UIRecharge=16;//
+E_UIAchievement=17;//成就
+E_UITalent=18;//天赋
+E_UIBattleMessage=19;//
+E_UItranslate=20;//
+E_UITask=21;
+
+__E_UIPerLoad=1000;
+}
+
+enum ENUM_UI_EVENT{
+event_barry_low=1;
+event_base=2;
+event_exchange=3;
+event_equipment=4;
+event_barracks=5;
+event_village=6;
+event_village2=7;
+event_achievement=8;
+event_pub=9;
+event_talent=10;
+event_luck=11;
+event_shop=12;
+event_base2=13;
+
+event_buji=14;
+event_fenshi=15;
+event_moku=16;
+event_shengji=17;
+event_zhanchang=18;
+
+event_introduce=25;
+event_battle_alert=26;
+event_first_win=31;
+event_open_door=33;
+
+}
+
+
+enum ATTACK_TYPE{
+AT_NORMAL=1;//普通攻击
+AT_BLOODY=2;//攻击眩晕
+AT_JUST_HEALTH =3;//纯加血
+AT_ATTACK_HEALTH =4;//吸血
+AT_ATTACK_POISON =5;//攻击和毒
+AT_ATTACK_LOW =6;//打人降敌人攻击
+AT_HEALTH_BLOODY =7;//加血眩晕
+AT_HEALTH_POISON =8;//回复和毒
+AT_HEALTH_LOW =9;//回复减伤
+
+ //
+ }
+enum MONSTER_ATTACK_TYPE{
+MA_NORMAL=1;    //普通攻击
+MA_BURNING =2;  //全体焚烧
+MA_SHIELD =3;   //护盾
+MA_ALIVE=4;     //复活
+MA_ICE=5;       //冰封
+MA_HEALTH=6;    //治疗
+}
+
+enum TIlE_LAYER3{
+//LAYER3_MARK_BLACK=3;
+//LAYER3_MARK_DEEPED=2;
+//LAYER3_MARK_GREY=1;
+//LAYER3_MARK_NONE=0;
+
+LAYER3_MARK_BEGIN=81;
+}
+
+enum TIlE_DEFINE
+{
+LAYER2_TOWER_MIN=30;
+LAYER2_TOWER_MAX=56;
+}
+
+enum TIlE_LAYER1
+{
+//17*6
+LAYER1_TILE_BG=102;
+}
+
+enum TIlE_LAYER2{
+LAYER2_RES_MIN=4;
+LAYER2_RES_MAX=19;
+
+LAYER2_LIGHT_RED =25;
+LAYER2_LIGHT_BLUE =26;
+LAYER2_LIGHT_GREEN =27;
+LAYER2_LIGHT_WHITE =28;
+LAYER2_LIGHT_GREY =29;
+
+LAYER2_TOWER_MIN_IRON = 30; //铁
+LAYER2_TOWER_FSC=38; //焚尸场
+LAYER2_TOWER_MIN_MUSHROOM =39;//蘑菇
+LAYER2_TOWER_BAR=40; //酒馆
+LAYER2_TOWER_SHOP=41; //黑市
+LAYER2_TOWER_BATTLE=44; //战场
+
+LAYER2_TOWER_TRANSLATE_DOOR=52; //传送门
+LAYER2_TOWER_HOME=53; //老家
+LAYER2_TOWER_TRANSLATE_ROOK=54; //巨石传送门
+
+//LAYER2_TOWER_ENEGY=55; //废气通道
+
+LAYER2_TOWER_ENEGY=56; //能量罩
+
+
+}
+
+
+enum ITEM_DEFINE
+{
+ITEM_ENEGY=75;//电池
+
+}
+
+enum TYPE_ACH
+{
+ACH_WAJUE =1;    //挖掘
+ACH_JIAOYI =2;	 //交易
+ACH_XUNLIAN =3;	 //训练
+ACH_BUCHONG =4;	 //补充电池
+ACH_XIDE =5;	 //习得
+ACH_JISHA =6;	 //击杀
+ACH_KAICAI =7;	 //开采
+ACH_FUHUO =8;	 //复活
+ACH_DITU =9;	 //完成地图
+ACH_SHASI =10;	 //杀死数量
+ACH_BUJIZHAN =11;	 //建立补给站
+ACH_BASE =12;	 //建造建筑
+ACH_LEADER =13;	 //新手引导
+ACH_DUBO =14;       //赌博
+}
+enum TYPE_ITEM//物品升级  效果不同 6种
+{
+TYPE_WAJUE_NUM =1;//挖掘数量
+TYPE_BEIBAO =2;//背包容量
+TYPE_DUIWU =3;//军队上限
+TYPE_CAIJI =4;//等级   采集
+TYPE_SHIYE =5;//视野探索范围
+TYPE_MIANBAO =6;//电池 补充的  生命值
+}
+
+enum TYPE_MAIN_ID//主界面  按钮//
+{
+ID_PUB =1;
+ID_VILLAGE =6;
+ID_BASE =3;
+ID_EXCHANGE =4;
+ID_EQUIPMENT =5;
+ID_BARRACKS =2;
+ID_SHOP =7;
+ID_ACHIEVEMENT =8;
+
+ID_WAJUE =9;//挖掘 按钮//主按钮
+id_task =10;//任务 按钮
+}
+
+enum TYPE_BTN_ID_VILLAGE//实验室  界面 按钮//
+{
+ID_LEFT_VILLAGE =1;
+ID_KAICAI =2;//开采//主按钮
+ID_JIAHAO_VILLAGE =3;
+}
+enum TYPE_BTN_ID_BARRACKS//兵营  界面 按钮//
+{
+//ID_LEFT_BARRACKS =1;//左侧 离开 按钮
+//ID_ZHAOMU =2;//招募//主按钮
+
+ID_BARRACKS_LEFT =1 ;//左侧 离开按钮
+ID_BARRACKS_RIGHT =2 ;//右侧 离开按钮
+
+ID_BARRACKS_ARMY =3 ;//军队
+ID_BARRACKS_ZHAOMU =4 ;//招募 按钮
+
+ID_BARRACKS_TEAM =5 ;//战队
+ID_BARRACKS_TANSUO =6 ;//探索 按钮
+}
+
+enum TYPE_SHOP//商城 数据类型//
+{
+SHOP_ARMY =1;
+SHOP_BUILD =2;//开采
+SHOP_TALENT =3;
+SHOP_MAP =4;
+SHOP_ITEM =5;
+SHOP_DATA =6;
+}
+
+enum TYPE_TALENT//
+{
+TALENT_SHANBI =1;
+TALENT_MINGZHONG =2;
+TALENT_XIAOHAO =3;
+TALENT_HP =4;
+TALENT_ATTACK =5;
+TALENT_ATTACKED =6;
+TALENT_SPEED =7;
+TALENT_BAOJI_LV =8;
+TALENT_BAOJI_ATTACK =9;
+
+}
+
+enum TYPE_DATA
+{
+DATA_WAJUE =1;
+DATA_KAICAI =2;
+DATA_TANSUO =3;
+DATA_LUCK =4;
+DATA_POINT =5;
+
+DATA_TALENT =6;
+DATA_BUJI =7;
+DATA_DUBO =8;
+DATA_JIAOYI =9;
+DATA_JIXIECANG =10;
+DATA_QINGLI =11;//清理
+DATA_WIN =12;//战斗胜利
+DATA_FANGWEN =13;//访问
+}

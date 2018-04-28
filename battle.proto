@@ -1,0 +1,841 @@
+package xapp.battle;
+//option java_package = "com.vertexgame.war2server.pb";
+//option java_outer_classname = "PBBattle";
+
+message Arms
+{
+optional int32 arm_id =1;
+optional string name =2;
+optional int32 grade =3;
+optional int32 cost_w1 =4;
+optional int32 cost_value1 =5;
+optional int32 cost_w2 =6;
+optional int32 cost_value2 =7;
+optional int32 cost_w3 =8;
+optional int32 cost_value3 =9;
+optional string combin = 10;
+optional int32 attack =11;
+optional int32 hp =12;
+optional int32 speed =13;
+optional int32 dps =14;
+optional int32 content =15;
+optional int32 good_vs =16;
+optional int32 bad_vs =17;
+optional string skill_name =18;
+optional int32 skill_type =19;
+optional int32 skill_value1 =20;
+optional int32 skill_value2 =21;
+optional string skill_value3 =22;
+optional string buff =23;
+optional string des =24;//说明
+
+optional int32 fuhuo_id =25;
+optional int32 fuhuo_num =26;
+optional int32 fenshao_id =27;
+optional int32 fenshao_num =28;
+
+optional int32 active_value1 =29;
+optional int32 active_value2 =30;
+optional string active_value3 =31;
+}
+
+message Build
+{
+optional int32 build_id = 1;
+optional string name = 2;
+optional string des = 3;
+optional int32 cost_w1 = 4;
+optional int32 cost_value1 = 5;
+optional int32 cost_w2 = 6;
+optional int32 cost_value2 = 7;
+optional int32 cost_w3 = 8;
+optional int32 cost_value3 = 9;
+optional int32 grade = 10;
+optional int32 up = 11;
+
+optional string tips = 12;
+
+}
+
+message Item
+{
+optional int32 item_id = 1;
+optional int32 grade =2;
+
+optional string name =3;
+optional string des =4;
+optional int32 cost_id1 =5;
+optional int32 cost_num1 =6;
+optional int32 cost_id2 =7;
+optional int32 cost_num2 =8;
+optional int32 cost_id3 =9;
+optional int32 cost_num3 =10;
+
+optional int32 sell_num =11;
+optional int32 deduct_id1 =12;
+optional int32 deduct_num1 =13;
+optional int32 deduct_id2 =14;
+optional int32 deduct_num2 =15;
+optional int32 get_id =16;
+optional int32 get_num =17;
+optional string tips =18;
+optional int32 pubitem =19;
+optional int32 taskitem =20;
+
+optional int32 up_logic =21;
+optional int32 make_appare =22;
+optional int32 type =23;
+optional int32 num =24;
+optional int32 money =25;
+optional int32 material =26;//出征材料标记
+optional int32 isnot =27;//是否出现在  仓库中
+
+optional string where = 28;//哪里可以获得
+
+optional int32 one =29;//判断 是否是图纸，在商店 只能购买一次
+optional int32 equip =30;//购买之后，装备库添加的 id
+}
+
+message Monster
+{
+optional int32 monster_id = 1;
+optional string name = 2;
+optional int32 grade = 3;
+optional int32 attack = 4;
+optional int32 hp = 5;
+optional int32 speed = 6;
+optional int32 skill = 7;
+optional int32 content = 8;
+optional int32 good_vs = 9;
+optional int32 bad_vs = 10;
+optional string drop1 = 11;
+optional string drop2 = 12;
+optional string drop3 = 13;
+optional string drop4 = 14;
+optional string drop5 = 15;
+optional string drop6 = 16;
+optional string drop7 = 17;
+optional string drop8 = 18;
+optional string drop9 = 19;
+optional string drop10 = 20;
+optional string des = 21;
+
+optional int32 pic_id = 22;//怪物图片对应标号
+optional int32 dodge =23;//躲避  只有怪物拥有
+
+optional int32 skill_type =24;
+optional int32 skill_value1 =25;
+optional int32 skill_value2 =26;
+optional string skill_value3 =27;
+}
+
+message Talent
+{
+optional int32 talent_id = 1;
+optional string name = 2;
+optional string ability = 3;
+optional string cost_id = 4;//逗号分割,
+optional string cost_num = 5;//逗号分割,
+optional int32 map = 6;
+optional string type = 7;
+optional string num = 8;
+optional int32 head = 9;
+optional int32 up = 10;
+optional string png =11;
+
+optional int32 page = 12;// 1 军事型   2经济型
+//optional int32 cost_id_2 = 13;//只有  经济型 有需求
+//optional int32 cost_num_2 = 14;//只有  经济型 有需求
+//optional int32 cost_id_3 = 15;//只有  经济型 有需求
+//optional int32 cost_num_3 = 16;//只有  经济型 有需求
+}
+
+message Scene
+{
+optional int32 scene_id = 1;
+optional string scene_name = 2;
+optional string hard_level1 = 3;//怪物在场景中分布
+optional string hard_level2 = 4;
+optional string hard_level3 = 5;
+optional string last_des = 6;
+optional string begin_des = 7;
+optional string map_size = 8;
+
+}
+
+message Tower
+{
+optional int32 tower_id = 1;
+optional string name = 2;
+optional int32 tile_id = 3;
+optional string message = 4;
+optional int32 map_id = 5;//哪张图
+optional string name2 = 6;
+optional string message2 = 7;
+//optional int32 tower_num ;//建筑物在图中的数量
+optional string area_tower = 8;//这个建筑物所在区域 2/6 3/6 1/6
+optional int32 task_item = 9;
+optional int32 build_res = 10;
+optional int32 build_time =11;
+optional int32 build_num = 12;
+optional string mark_item_get = 13;
+optional string arm_res = 14;
+optional string monster_res = 15;
+optional string monster_drop = 16;
+optional string monster_drop_num = 17;
+optional string message_end = 18;
+optional int32 tower_flag = 19;//建筑物攻占后的状态 （旗帜）
+
+optional int32 monster_des = 20;//攻打建筑描述
+optional int32 monster_level2 = 21;//攻打建筑等级2 怪物
+optional int32 monster_level3 = 22;//攻打建筑等级3 怪物
+optional int32 task_count =23;//进入 所需任务物品 描述
+
+optional int32 rate_2 =24;//升级到二级后 产量增长率
+optional int32 rate_3 =25;//升级到 三级后
+
+optional int32 supply_num =26;//如果是补给站，从这里获取数量
+}
+
+message Task
+{
+optional int32 id=1;
+optional string name=2;
+optional int32 page_id=3;//页面 跳转id
+optional string point=4;//奖励 数量
+optional string des=5;
+
+optional string des_2=6;//任务的详细说明 用于提示玩家，直接读取
+optional string des_3=7;//任务 的单位
+
+optional int32 type=8;//任务 类型
+optional string id_value=9;//任务 对象ID
+optional string value=10;//任务数量
+optional int32 time=11;
+
+}
+
+message PageInfo
+{
+optional int32 page_id = 1;
+optional string load = 2;
+optional string bgname = 3;
+
+}
+message Gather
+{
+optional int32 gather_id = 1;
+optional string gather_fixed = 2;
+optional string gather_dynamic = 3;
+optional int32 gather_random = 4;
+optional int32 gather_time = 5;
+
+}
+
+message  Achievement
+{
+optional int32 id=1;//
+optional string name=2;//
+optional int32 point=3;//
+optional string des=4;//
+optional int32 up=5;//
+optional int32 head=6;//
+optional int32 type=7;//
+optional int32 num=8;//
+optional int32 mapid=9;//
+optional int32 level=10;//
+optional string army_id=11;//
+}
+
+message Help
+{
+optional int32 help_id=1;
+optional int32 map_id=2;
+optional int32 build=3;
+optional int32 towerRes_id=4;
+optional int32 drop_id=5;
+optional string equipment_id=6;
+optional string base_id=7;
+optional string exchange_id=8;
+optional string village_id=9;
+
+optional string page1=10;
+optional string page2=11;
+optional string iconMain=12;
+
+optional int32 buy=13;
+optional string point_id=14;
+
+optional string page_barracks=15;
+}
+
+message Resource
+{
+optional int32 id=1;
+optional string name=2;
+optional int32 item_id=3;
+optional int32 tile_id=4;
+optional int32 map_id=5;
+optional string area_res=6;
+optional string res_num=7;
+optional int32 res_count=8;
+
+}
+
+message Bet{
+optional int32 bet_id=1;
+optional string bet_name=2;
+optional int32 item_id=3;
+optional int32 bet_object=4;///去掉了
+optional int32 success=5;
+optional int32 bet_pro=6;
+optional int32 bet_add=7;
+optional int32 bet_change=8;
+optional int32 bet_ex=9;
+optional string event1=10;
+optional string des1=11;
+optional string item_id1=12;
+optional string event2=13;
+optional string des2=14;
+optional string item_id2=15;
+optional int32 res_precent=16;
+}
+message Sound{
+optional int32 sound_id=1;
+optional string name=2;
+optional int32 type=3;
+
+}
+
+message Shop{
+optional int32 shop_id=1;
+optional string name=2;
+optional string item_id=3;
+optional string pic=4;
+optional int32 number=5;
+optional int32 type=6;
+optional int32 priority=7;
+optional int32 money_id=8;
+optional int32 money=9;
+optional int32 logic=10;
+optional string type_progress=11;
+optional string trigger=12;
+optional string des=13;
+optional string des2=14;
+
+}
+message Guide{
+optional int32 guide_id=1;
+optional int32 head=2;
+optional int32 page_id=3;
+optional string event =4;
+}
+message Story{
+optional int32 id=1;
+optional string name=2;
+optional string story=3;
+}
+
+message BattleResources
+{
+repeated Arms arms = 1;
+repeated Build build = 2;
+repeated Item item = 3;
+repeated Scene scene = 4;
+repeated PageInfo pageInfo = 5;
+repeated Monster monster = 6;
+repeated Talent talent = 7;
+repeated Tower tower = 8;
+repeated Gather gather = 9;
+repeated Achievement achievement = 10;
+repeated Help help = 11;
+repeated Resource resource = 12;
+repeated Bet bet =13;
+repeated Sound sound =14;
+repeated Shop shop =15;
+repeated Guide guide =16;
+repeated Task task =17;
+repeated Story story =18;
+}
+
+
+message UserClientSave{
+
+}
+
+message BattleTower
+{
+optional int32 tower_id=1;//战斗建筑id
+optional int32 tower_tile_x=2;
+optional int32 tower_tile_y=3;
+optional int32 tower_state=4;//战斗建筑状态0为未攻占，1为攻占
+optional int32 tower_tile_id=5;//
+optional int32 used_task_item=6;//是否建筑物已经用了task_item
+optional int32 take_enegy=7;//当前建筑物是否带走了电池
+
+optional int32 grade =8;//等级  一共 三级，升级 两次//
+optional int32 Battle_num =9;//怪物 袭击次数  最多五次,然后升级？//
+}
+
+message UserData
+{
+    optional int32 ___temp__b = 1;
+    optional int32 ___temp__a = 2;
+    //(army=军队)
+    message  ArmyData//用于存储玩家军队的ID 与 数量
+    {
+    optional int32 army_id=1;
+    optional int32 army_num=2;
+    optional int32 army_first=3;
+    }
+    repeated ArmyData armyData = 3;
+
+    //(item=物品)  物品的ID 和 数量
+    message  ItemData//用于存储 玩家所有物品 的ID 与数量
+    {
+    optional int32 Item_id=1;
+    optional int32 Item_num=2;
+    }
+    repeated ItemData itemData = 4;
+
+    //(build=建筑物)
+    message  BuidData//用于存储 玩家所 拥有建筑物 的ID 与数量
+    {
+    optional int32 Buid_id=1;//建筑物  的id，比cell位置 大 1
+    optional int32 Buid_num=2;//为 民宅 做准备，不知道 会不会有用
+    }
+    repeated BuidData buidData = 5;
+
+message  Warehouse//用于 仓库显示 物品，被筛选过的数据
+{
+optional int32 Item_id=1;
+optional int32 Item_num=2;
+}
+repeated Warehouse warehouse = 6;
+
+optional int32 tim___ = 7;
+
+    optional int32 time_biao_tick = 8;//记录主界面40个点的计数//这是什么？
+
+    //商店 页面  所需要的 数据
+    message  ExchangeData//数据 需要是连续的，因此进行了筛选
+    {
+    optional int32 Item_id=1;
+    }
+    repeated ExchangeData exchangeData = 9;
+
+    //装备制作 页面  所需要的 数据
+    message  EquipmentData//数据 需要是连续的，因此进行了筛选
+    {
+    optional int32 Item_id=1;
+    }
+    repeated EquipmentData equipmentData = 10;
+
+    //实验室 页面  所需要的 数据(工人)
+    message  VillageData
+    {
+    optional int32 Item_id=1;
+    optional int32 Item_weizhi=2;//该物品 在玩家数据中的位置
+    optional int32 Item_num=3;//该物品的 数量
+    }
+    repeated VillageData villageData = 11;
+
+    //实验室 页面  生成与消耗 数据(产品)
+    message  ProductData
+    {
+    optional int32 Item_id=1;
+    optional int32 Item_weizhi=2;//在village中用于记录在玩家数据库中的位置//在view2 中 没用
+    optional int32 Item_number=3;//最终 生成消耗 情况
+    }
+    repeated ProductData productData = 12;
+
+    /////
+
+    //星际营地  背包物品的信息
+    message  Pub_item
+    {
+    optional int32 item_id=1;
+    optional int32 item_num=2;
+    optional int32 table_idx=3;//在 tab 中的位置
+    }
+    repeated Pub_item pub_item = 13;
+
+    //星际营地  任务  物品的信息
+    message  Pub_task
+    {
+    optional int32 task_id=1;
+    optional int32 task_num=2;
+    optional int32 table_idx=3;//在 tab 中的位置
+    }
+    repeated Pub_task pub_task = 14;
+
+    message Pub_army//星际营地  军队信息//
+    {
+    optional int32 army_id=1;
+    optional int32 army_num=2;
+    optional int32 table_idx=3;//在 tab 中的位置
+    }
+    repeated Pub_army pub_army = 15;
+
+    optional int32 pubArmy_number=16;//营地页面 军队数量上限
+
+    message ExpArmy//远征军，探索  军队
+    {
+    optional int32 id=1;
+    }
+    repeated ExpArmy expArmy = 17;
+
+    optional int32 pubItem_number=18;//营地页面 物品数量上限
+    optional int32 pubItem_number_2=19;//营地页面 拥有 物品数量上限
+
+    message SceneData
+    {
+    optional int32 scene_id =1;
+    repeated int32 mapLayer0=2;//地图地表数据
+    repeated BattleTower battleTower=3;//地图建筑数据
+
+    message MapRes
+    {
+    optional int32 map_pos = 1;//唯一位置
+    optional int32 res_id = 2;//踩上资源 分配数量
+    optional int32 res_num = 3;//分配数量
+    }
+    repeated MapRes mapRes=4;//地图资源数据
+
+    optional int32 translate_open =5;//巨石传送阵是否开启
+
+    repeated int32 shop_item_buy = 6;//记载当前地图中黑市，购买了多少item//
+
+    message TileCell
+    {
+       optional int32 leftTop=1;
+       optional int32 leftBottom=2;
+       optional int32 rightTop=3;
+       optional int32 rightBottom=4;
+       optional string key=5;
+
+    }
+    repeated TileCell tileCell=7;//地图0记录
+repeated TileCell tileCell_fog=8;//记录 战争迷雾
+
+    repeated int32 mapLayer03=9;//地图地表数据
+
+    }
+
+    repeated SceneData sceneData = 20;
+
+    optional int32 scene_id = 21;//当前玩家所在场景索引
+
+    //临时 用于临时存储 table表中所需数据
+    message  ExampleData//升级兵种 弹窗里面的临时性 数据
+    {
+    optional int32 id=1;//
+    }
+    repeated ExampleData exampleData = 22;
+
+
+    optional int32 gather_grade=23;//采集器 的等级
+    optional int32 number_scv=24;//机器人 总数
+    optional int32 number_scv_2=25;//机器人 使用数量
+    optional int32 money_grade=26;//炼金（挖掘） 的等级
+
+    message  GraveyardData//墓地 数据
+    {
+    optional int32 id=1;//
+    optional int32 num=2;//
+    }
+    repeated GraveyardData graveyardData = 27;
+
+    optional int32 sum111=28;
+
+    message  AchievementData//成就   显示  数据
+    {
+    optional int32 id =1;//
+
+    optional int32 type =2;
+    //optional int32 num =3;
+    optional string army_id =4;//无用了？
+
+    optional int32 over_Ach =5;
+    }
+    repeated AchievementData achievementData = 29;
+
+    message  Table_TalentData//  天赋   显示   数据
+    {
+    optional int32 id=1;//
+    optional int32 had=2;//当 天赋 升到 满级时，做特殊处理
+    }
+    repeated Table_TalentData table_TalentData_2 = 30;
+    repeated Table_TalentData table_TalentData_2_show = 31;//展示
+    repeated Table_TalentData table_TalentData = 32;
+
+    optional int32 before_scene_id = 33;//上一次玩家所在场景索引
+
+    optional int32 add_blood = 34;//电池 所加血量
+    optional int32 add_blood_cd = 35;//电池 cd
+
+    message  Shop_data//  商城 购买
+    {
+        optional int32 shop_id=1;//
+        optional int32 over=2;//不能使用时  做特殊处理
+    }
+    repeated Shop_data shop_data = 36;
+
+    message  Shop_money//  //商城 第二层 id
+    {
+        optional int32 money_id=1;//
+    }
+    repeated Shop_money shop_money = 37;
+
+    optional int32 sum____1=38;
+    optional int32 sum____2=39;
+
+    message  Bag_data//  //地图 左上角 背包内的数据
+    {
+    optional int32 item_id=1;//
+    optional int32 item_num=2;//
+    }
+    repeated Bag_data bag_data = 40;
+
+
+    optional int32 sum____3= 41;
+    //新事物
+    message  Guide_save//
+    {
+    optional int32 event_id=1;//
+    //optional int32 event_state=2;
+
+    //每次触发剧情  都需要 变量控制
+    optional int32 page_first_main=2;//
+    optional int32 page_first_base=3;//
+    optional int32 page_first_exchange=4;
+    optional int32 page_first_equipment=5;
+    optional int32 page_first_barracks=6;
+    optional int32 page_first_village=7;
+    optional int32 page_first_village2=8;
+    optional int32 page_first_achievement=9;
+    optional int32 page_first_pub=10;
+    optional int32 page_first_talent=11;
+    optional int32 page_first_luck=12;
+    optional int32 page_first_shop=13;
+    optional int32 page_first_base2=14;
+
+    optional int32 page_first_buji_sttion=15;
+    optional int32 page_first_fenshi_station=16;
+    optional int32 page_first_moku_station=17;
+    optional int32 page_first_shegji=18;
+    optional int32 page_first_zhanchang_station=19;
+    }
+    optional Guide_save guide_save = 42;
+
+    message  Guide_var//记录 进入 各个页面 的次数
+    {
+        optional int32 btn_visible_id=1;//物质仓-1  机器人-2  士兵升级-3
+    }
+    optional Guide_var guide_var = 43;
+
+    message MyTask//任务   一共三个任务
+    {
+    optional int32 task_id=1;//任务 的ID
+    optional int32 task_Idvalue=2;//任务目标ID
+    optional int32 task_value=3;//任务 的目标数量
+    optional int32 task_current_value=4;//任务 的起点数量值
+    }
+    repeated MyTask myTask = 44;
+
+    message Task_Data//
+    {
+    optional int32 data_id=1;//任务 id
+    optional int32 data_IdValue=2;//数据对象ID
+    optional int32 data_Value=3;//数据对象  的累积数量
+    }
+    repeated Task_Data task_Data = 45;
+
+    message RecordData //点击  得到的数据 统统记录再次//______________________
+    {
+    optional int32 sum_wajue =1;//
+    optional int32 sum_kaicai =2;//
+    optional int32 sum_tansuo=3;//点击 探索次数
+
+    optional int32 sum_luck=4;//记录 点击 luck 的 次数，没有 成就      //luck 废除
+    //optional int32 sum_point =5;//记录 成就点数                      //成就点 废弃
+
+    optional int32 sum_talent=6;//天赋  学习次数
+    optional int32 sum_buji =7;//建立补给点 的数量
+    optional int32 sum_dubo =8;
+    optional int32 sum_jiaoyi =9;
+    optional int32 sum_jixiecang =10;
+    optional int32 sum_qingli =11;//清理  记录清理
+
+    optional int32 sum_win =12;//战斗 胜利 的次数
+    optional int32 sum_fangwen =13;//点击 访问 按钮的次数
+
+
+    message Sum_zhaomu//
+    {
+    optional int32 zhaomu_id=1;//招募 对象ID
+    optional int32 zhaomu_num=2;//招募 对象数量
+    }
+    repeated Sum_zhaomu sum_zhaomu = 20;
+
+    message Sum_jisha//
+    {
+    optional int32 jisha_id=1;//击杀 对象ID
+    optional int32 jisha_num=2;//击杀 对象数量
+    }
+    repeated Sum_jisha sum_jisha = 21;
+
+    message Sum_fuhuo//
+    {
+    optional int32 fuhuo_id=1;//复活 对象ID
+    optional int32 fuhuo_num=2;//复活 对象数量
+    }
+    repeated Sum_fuhuo sum_fuhuo = 22;
+
+    }
+    repeated RecordData recordData=46;
+
+
+    optional int32 StopBattle=47;//设置 是否 禁止战斗
+
+    optional int32 showFingerSlideActor =48;//  设置 是否 显示 手指滑动提示FingerSlideActor（1显示 0不）//主界面
+    optional int32 moveTableview =49;// 设置变量，控制 tableview 向下滑动 的格数
+
+optional int32 barracksOrPub =50;//  0为 兵营，1为 pub
+optional int32 btn =51;// 当值 为1时，btn隐藏事件 跳过//
+
+optional int32 talentOrTalent =52;//  0为 军事型天赋，1为 经济型天赋
+
+message Test_data//用于 测试 战斗胜利的 队伍组合
+{
+optional string armys =1;
+}
+repeated Test_data win_data =53;
+repeated Test_data fail_data =54;
+
+
+
+}
+
+
+
+
+message UserTemp
+{
+    optional int32 battle_monster_id=1;//战斗怪物id
+
+    optional BattleTower battleTower = 2;//
+
+    optional int32 battle_monster_from_map=3;//战斗from map 或者从建筑物进入   算掉落  //1 怪物 //0 建筑物
+
+    optional int32 battle_last_resule=4;//战斗结果0胜利 1失败
+
+    optional int32 battle_tower_step=5;//战斗怪物id
+
+    //公共面板  显示的信息
+    message  TextData
+    {
+    optional string Text_string=1;
+    optional int32 color_r=2;
+    optional int32 color_g=3;
+    optional int32 color_b=4;
+    }
+
+    repeated TextData textData = 6;
+
+    //战斗结束，掉落多少普通物品
+    message  DropData
+    {
+    optional int32 drop_id=1;
+    optional int32 drop_num=2;
+    }
+    repeated DropData dropData = 7;
+
+    //建筑物 tableview临时数据 页面跳出就 清除!!!
+    message  TowerData
+    {
+    optional int32 id_1=1;//酒馆 军队 id
+    optional int32 id_2=2;
+    optional int32 num=3;
+    }
+    repeated TowerData towerData = 8;
+
+    optional int32 tower_state=9;//用于对应 不同 的情况，创建 不同的表
+
+    optional int32 selected_scene_id=10;//用于对应 不同 的情况，创建 不同的表
+
+    message  UserTemp_ach//成就   显示  数据
+    {
+    optional int32 id =1;//
+    optional int32 type =2;
+    optional int32 num =3;
+    optional string army_id =4;
+    }
+    repeated UserTemp_ach usertemp_ach = 31;
+
+///////////////////////////////////////////////////////////
+message  Lack_armyItem//判断 士兵升级时，所需材料
+{
+optional int32 id =1;//
+optional int32 num =2;
+}
+repeated Lack_armyItem lack_armyItem_show = 32;//显示用
+repeated Lack_armyItem lack_armyItem_use =33;//记录用//确定 升级时，扣除
+optional int32 lack_money =34;////判断 士兵升级时，材料不足，所需要的 钱的数量 id=1000  //记录数据用//确定 升级时，扣除
+
+}
+
+
+message LeaderHelp
+{
+    optional int32 fff=1;//
+
+    message MainVisibleBtn//主要 按钮 的 状态，是否开启（有则 开启）
+    {
+        optional int32 id=1;
+        optional int32 isFirst=2;//设定 是否 是第一次，没被点击 就永远 是第一次
+    }
+    repeated MainVisibleBtn mainVisibleBtn=2;  //3456 2 22 1 //还不够
+
+    repeated MainVisibleBtn base_data_visible =3;//基地
+    repeated MainVisibleBtn exchange_data_visible =4;//交易
+    repeated MainVisibleBtn equipment_data_visible =5;//装备
+    repeated MainVisibleBtn village_data_visible=6;//实验室 ->需要 出现的 tableview 数据
+
+    repeated MainVisibleBtn village_visible_btn=7;//实验室 ->其他 提示性按钮  1 23
+    repeated MainVisibleBtn pub_visible_btn=8;//营地 提示性按钮  1
+    repeated MainVisibleBtn btn1_visible_btn=9;//建造 ->其他 提示性按钮  1
+    repeated MainVisibleBtn btn2_visible_btn=10;//交易 ->其他 提示性按钮  1
+    repeated MainVisibleBtn btn3_visible_btn=11;//制作 ->其他 提示性按钮  1
+    repeated MainVisibleBtn btn4_visible_btn=12;//兵营 ->其他 提示性按钮  1
+
+    repeated MainVisibleBtn exam=13;//临时表，用于 临时存放 TAG 数据，颠倒 建筑物，装备库 数据用
+
+    //---------------------------------------------------------------------------------------
+    //游戏home按键重新启动游戏时，需要记录
+    optional int32 gameState =14;//0为ui（不存储），1为地图，2为建筑物页面
+    //地图坐标
+    optional int32 mapPosX = 15;
+    optional int32 mapPosY = 16;
+
+
+
+
+}
+
+message ClinetDataInfo
+{
+    //静态表
+    optional BattleResources res = 1;
+    optional UserClientSave userClientSave = 2;
+    optional UserData userData = 3;
+    optional UserTemp userTemp = 4;
+
+    optional LeaderHelp leaderHelp = 5;
+
+
+}
+
+
+
+

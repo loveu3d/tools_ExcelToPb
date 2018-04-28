@@ -1,0 +1,47 @@
+package xapp.socket;
+option java_package = "com.finger.pb";
+option java_outer_classname = "PBSocket";
+import "battle.proto";
+
+message CMsgBase
+{
+    required bytes msghead = 1;//存放msgHead
+    optional bytes msgbody = 2;//存放某个message
+}
+
+message CMsgHead
+{
+    required int32 msgtype = 1;//MessageType 类型
+    optional int32 msgcode = 2;//MessageCode 错误码
+}
+enum MessageCode
+{
+    SYS_NORMAL = 1; //正常的通信,非1的话就是有错误
+
+    SYS_NOT_ENOUGH_GOLD = 2; //金钱不足
+}
+
+enum MessageType
+{
+    MSG_HEART_BEAT =100001;
+}
+
+//CS Client to Server
+//SC Server to Client
+//@   MSG_USER_LOGIN = 102;//登陆
+
+message CS_Login{
+    //用户id
+    required string userName = 1;
+    //密码
+    required string password = 2;
+    //服务器id分服
+    required string serverID = 3;
+}
+message SC_Login{
+//用户id
+required string userName = 1;
+//密码
+required string password = 2;
+}
+

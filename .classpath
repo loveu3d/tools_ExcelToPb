@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Developer/cocos2d-x-3.6/Project/PaPaRoom/tools/JavaExcel2PB/src/protobuf-java-2.5.0.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/Developer/cocos2d-x-3.6/Project/PaPaRoom/tools/JavaExcel2PB/src/org.json.jar"/>
+	<classpathentry kind="lib" path="/Developer/cocos2d-x-3.6/Project/PaPaRoom/tools/JavaExcel2PB/src/poi-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="/Developer/cocos2d-x-3.6/Project/PaPaRoom/tools/JavaExcel2PB/src/commons-lang-2.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
